@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-sora: "Sora", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-xbold: 800;
+  --font-weight-xxbold: 900;
+  --text-fsize1: 1.5rem;
+  --text-fsize2: 1.25rem;
+  --text-fsize3: 1rem;
+  --text-fsize4: 0.875rem;
+  --text-fsize5: 0.75rem;
+}
+
+/* Dark mode configuration */
+@variant dark (&:where(.dark, .dark *));
+
+/* Base dark mode styles */
+html {
+  background-color: #0f172a;
+}
+
+html.dark {
+  background-color: #fef3c7;
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 2px solid rgb(74 222 128);
+  border-radius: 9999px;
+  animation: dot-wave 1.8s ease-out infinite;
+}
+
+@keyframes dot-wave {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
